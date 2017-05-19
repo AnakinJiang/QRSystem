@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC 
+  	"-//Apache Struts//XWork Validator 1.0.2//EN"
+  	"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="restaurant.ID">
+		<field-validator type="requiredstring">
+			<message>请输入用户名</message>
+		</field-validator>
+	</field>
+	<field name="restaurant.confirmPassword">
+		<field-validator type="fieldexpression">
+			<param name="expression">restaurant.confirmPassword==restaurant.password</param>
+			<message>确认密码和密码输入不一致</message>
+		</field-validator>
+	</field>
+	<field name="restaurant.password">
+		<field-validator type="requiredstring">
+			<message>请输入秘密</message>
+		</field-validator>
+	</field>
+	<field name="restaurant.name">
+		<field-validator type="requiredstring">
+			<message>请输入店名</message>
+		</field-validator>
+	</field>
+	<field name="restaurant.A">
+		<field-validator type="required">
+			<message>请输入2人桌数</message>
+		</field-validator>
+		<field-validator type="int">
+		<param name="min">0</param>
+		<param name="max">200</param>
+		<message>桌数必须在${min}-${max}之间</message>
+		</field-validator>
+	</field>
+		<field name="restaurant.B">
+		<field-validator type="required">
+			<message>请输入3~4人桌数</message>
+		</field-validator>
+				<field-validator type="int">
+		<param name="min">0</param>
+		<param name="max">200</param>
+		<message>桌数必须在${min}-${max}之间</message>
+		</field-validator>
+	</field>
+		<field name="restaurant.C">
+		<field-validator type="required">
+			<message>请输入5~8人桌数</message>
+		</field-validator>
+				<field-validator type="int">
+		<param name="min">0</param>
+		<param name="max">200</param>
+		<message>桌数必须在${min}-${max}之间</message>
+		</field-validator>
+	</field>
+		<field name="restaurant.D">
+		<field-validator type="required">
+			<message>请输入8人以上桌数</message>
+		</field-validator>
+				<field-validator type="int">
+		<param name="min">0</param>
+		<param name="max">200</param>
+		<message>桌数必须在${min}-${max}之间</message>
+		</field-validator>
+	</field>
+	<field name="restaurant.time">
+		<field-validator type="required">
+			<message>请输入平均等待时间</message>
+		</field-validator>
+				<field-validator type="int">
+		<param name="min">0</param>
+		<param name="max">180</param>
+		<message>平均等待时间必须在${min}-${max}分钟之间</message>
+		</field-validator>
+	</field>
+</validators>
+	
+
+	
+

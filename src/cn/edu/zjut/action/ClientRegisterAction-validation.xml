@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC 
+  	"-//Apache Struts//XWork Validator 1.0.2//EN"
+  	"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="client.ID">
+		<field-validator type="stringlength">
+			<param name="minLength">11</param>
+			<param name="maxLength">11</param>
+			<message>账号必须为11位手机号码</message>
+		</field-validator>
+	</field>
+	
+	<field name="client.password">
+		<field-validator type="requiredstring">
+			<message>请输入密码</message>
+		</field-validator>
+	</field>
+	<field name="client.name">
+		<field-validator type="requiredstring">
+			<message>请输入姓名</message>
+		</field-validator>
+	</field>
+	<field name="client.confirmPassword">
+		<field-validator type="fieldexpression">
+			<param name="expression">client.confirmPassword==client.password</param>
+			<message>确认密码和密码输入不一致</message>
+		</field-validator>
+	</field>
+	
+</validators>
+	
+
+	
+
